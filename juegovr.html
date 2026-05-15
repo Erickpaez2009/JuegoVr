@@ -437,6 +437,8 @@
     </script>
 </head>
 <body>
+
+    
     <div class="controles-movil">
         <div class="d-pad">
             <div></div>
@@ -478,12 +480,24 @@
     </div>
 
     <a-scene physics="gravity: -18; friction: 0.01;">
-        <a-sky color="#050913"></a-sky>
+        
+    
+
+
+
+         
+
+    <img id="textura-cielo" src="img/panorama.jpg">
+<audio id="musica-fondo" src="img/sonidoelectronico.mp3"></audio>
+
+
+        
         <a-entity light="type: ambient; intensity: 0.45"></a-entity>
         <a-entity light="type: directional; intensity: 0.75" position="-4 8 5"></a-entity>
 
         <a-box id="lava" static-body position="0 -8 -280" width="220" height="0.4" depth="620" material="color: #ff2233; opacity: 0.45; transparent: true"></a-box>
-
+ <a-sphere id="sky-dome" radius="150" material="src: #textura-cielo; shader: flat; side: back" rotation="0 -90 0"></a-sphere>
+ <a-entity sound="src: #musica-fondo; autoplay: true; loop: true; volume: 0.5"></a-entity>
         <a-box class="suelo" static-body position="0 0 0" width="8" height="0.3" depth="8" color="#222"></a-box>
         <a-box class="suelo" static-body position="0 4 -12" width="5" height="0.4" depth="5" color="#333"></a-box>
         <a-box class="suelo" static-body position="-9 7 -18" width="5" height="0.4" depth="5" color="#333"></a-box>
@@ -515,6 +529,7 @@
             <a-text value="NIVEL 2 COMPLETADO" align="center" position="0 5 0" scale="9 9 9" color="#ffffff"></a-text>
             <a-entity light="type: point; intensity: 3; color: #ffd166" position="0 6 0"></a-entity>
         </a-box>
+        
 
         <a-text value="NIVEL 3: ASCENSO FINAL" position="0 49 -196" align="center" color="#00ffcc" scale="3 3 3"></a-text>
         <a-box class="suelo" static-body position="0 43 -190" width="8" height="0.35" depth="8" color="#3a86ff"></a-box>
